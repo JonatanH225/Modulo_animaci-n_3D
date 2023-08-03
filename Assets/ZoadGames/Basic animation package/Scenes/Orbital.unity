@@ -3138,8 +3138,8 @@ MonoBehaviour:
   velocidad: 10
   velocidadInicial: 0
   velocidadAgachado: 0
-  gravedad: 9.8
-  jumpForce: 15
+  gravedad: 30
+  jumpForce: 45
   height: 0
   center: {x: 0, y: 0, z: 0}
 --- !u!95 &1270221817

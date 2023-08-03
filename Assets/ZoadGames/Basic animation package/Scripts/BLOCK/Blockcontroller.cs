@@ -10,6 +10,7 @@ public class Blockcontroller : MonoBehaviour
 
     float velocidadInicial;
     float velocidadAgachado;
+    float velocidadsaltando;
 
     InputController _inputController = null;
     Animator anim;
@@ -20,6 +21,7 @@ public class Blockcontroller : MonoBehaviour
     public float movementSpeed = 0f;
     public float jumpForce = 8f;
     bool canJump = false;
+    public float gravedad;
 
     private void Start()
     {
@@ -28,6 +30,7 @@ public class Blockcontroller : MonoBehaviour
         cc = GetComponent<CapsuleCollider>();
         velocidadInicial = _speed;
         velocidadAgachado = _speed * 0.3f;
+        velocidadsaltando = _speed * 0.5f;
     }
 
     
@@ -55,10 +58,11 @@ public class Blockcontroller : MonoBehaviour
         if (Input.GetButtonDown("Jump") && canJump)
         {
             rb.velocity += (Vector3.up * jumpForce);
+            rb.velocity -= (Vector3.down * gravedad);
             anim.SetBool("isJumpB", true);
             anim.SetBool("Crouch", false);
-            transform.position += transform.forward * y/2 * _speed * Time.deltaTime;
-            transform.position += transform.right * x/2 * _speed * Time.deltaTime;
+            transform.position += transform.forward * y * _speed * Time.deltaTime;
+            transform.position += transform.right * x * _speed * Time.deltaTime;
         }
 
         if (Input.GetKeyDown(KeyCode.LeftControl))
