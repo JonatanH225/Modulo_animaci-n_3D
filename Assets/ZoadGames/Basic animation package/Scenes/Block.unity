@@ -2938,7 +2938,8 @@ MonoBehaviour:
   logicaCabeza: {fileID: 1338927070}
   cabeza: {fileID: 1338927067}
   movementSpeed: 0
-  jumpForce: 8
+  jumpForce: 18
+  gravedad: 10
 --- !u!114 &1301610339
 MonoBehaviour:
   m_ObjectHideFlags: 0
